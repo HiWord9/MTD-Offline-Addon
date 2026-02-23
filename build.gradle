@@ -1,0 +1,80 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.2.21'
+    id 'fabric-loom' version '1.15-SNAPSHOT'
+}
+
+base {
+    archivesName = project.archives_base_name
+}
+
+version = project.mod_version
+
+repositories {
+    maven {
+        url = "https://api.modrinth.com/maven"
+    }
+
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
+}
+
+dependencies {
+    // Basic settings
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    modImplementation "io.github.llamalad7:mixinextras-fabric:0.2.2"
+
+    // ModMenu
+    modImplementation "com.terraformersmc:modmenu:17.0.0-beta.2"
+
+    // Fabric API
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // MyTotemDoll
+    modImplementation "maven.modrinth:ygYU16dG:VX3p0HFg"
+}
+
+processResources {
+    def expandProps = [
+            "version"                         : version,
+            "group"                           : project.group, //Else we target the task's group.
+            "mod_main_dir"                    : mod_main_dir,
+            "mod_client_class"                : mod_client_class,
+
+            "fabric_version"                  : fabric_version,
+            "loader_version"                  : loader_version,
+
+            "mod_id"                          : mod_id,
+            "mod_name"                        : mod_name,
+            "mod_description"                 : mod_description,
+            "mod_authors"                     : mod_authors.replace(", ", "\", \""),
+
+            "mod_homepage"                    : mod_homepage,
+
+            "mod_sources"                     : mod_sources,
+            "mod_issue_tracker"               : mod_issue_tracker,
+            "mod_license"                     : mod_license,
+
+            "minecraft_version_range"         : minecraft_version_range,
+            "loader_version_range"            : loader_version_range,
+            "java_version"                    : java_version
+    ]
+    filesMatching(['fabric.mod.json', mod_id + '.mixins.json']) {
+        expand expandProps
+    }
+    inputs.properties(expandProps)
+}
+
+kotlin {
+    jvmToolchain(java_version.toInteger())
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archivesBaseName}"}
+    }
+}
