@@ -1,6 +1,6 @@
 package com.hiword9.mtd_offline_addon.mixin;
 
-import com.hiword9.mtd_offline_addon.MTDOfflineAddon;
+import com.hiword9.mtd_offline_addon.OfflineModeSkinProvider;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.network.protocol.game.ClientboundPlayerInfoUpdatePacket;
@@ -30,6 +30,6 @@ public class ClientPacketListenerMixin {
 
     @Unique
     void onReload(PlayerInfo playerInfo) {
-        MTDOfflineAddon.Companion.getSkinProvider().reloadOne(playerInfo.getProfile().name());
+        OfflineModeSkinProvider.INSTANCE.reloadOne(playerInfo.getProfile().name());
     }
 }

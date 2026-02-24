@@ -10,9 +10,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.resources.Identifier
 import net.minecraft.world.entity.player.PlayerModelType
 
-class OfflineModeSkinProvider(maxRequestsCheckEnabled: Boolean) :
-    StandardSkinProvider(maxRequestsCheckEnabled)
-{
+object OfflineModeSkinProvider : StandardSkinProvider(false) {
     override fun loadDollFromAPI(nickname: String): Response<ParsedSkinData?>? {
         val profile = Minecraft.getInstance().connection?.getPlayerInfo(nickname)
             ?: return Response.empty(404)
