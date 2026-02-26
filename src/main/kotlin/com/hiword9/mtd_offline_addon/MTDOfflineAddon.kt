@@ -5,6 +5,6 @@ import net.lopymine.mtd.tag.manager.TagsSkinProviders
 
 class MTDOfflineAddon : ClientModInitializer {
     override fun onInitializeClient() {
-        TagsSkinProviders.registerProvider("OfflineMode", OfflineModeSkinProvider)
+        TagsSkinProviders.registerProvider("Offline", OfflineModeSkinProvider)
     }
 }
