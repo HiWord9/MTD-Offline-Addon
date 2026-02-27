@@ -17,5 +17,6 @@ class MTDOfflineAddon : ClientModInitializer {
 
     override fun onInitializeClient() {
         TagsSkinProviders.registerProvider("Offline", OfflineModeSkinProvider)
+        TagsSkinProviders.registerProvider("OfflineCache", CacheSkinProvider)
     }
 }
