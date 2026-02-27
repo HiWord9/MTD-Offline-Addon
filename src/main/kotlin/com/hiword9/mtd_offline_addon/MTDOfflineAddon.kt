@@ -1,9 +1,20 @@
 package com.hiword9.mtd_offline_addon
 
 import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.loader.api.FabricLoader
+import net.lopymine.mtd.skin.data.ParsedSkinData
 import net.lopymine.mtd.tag.manager.TagsSkinProviders
 
 class MTDOfflineAddon : ClientModInitializer {
+    companion object {
+        val CACHE_MANAGER = CacheManager(
+            CacheFileManager(
+                ParsedSkinData::class.java,
+                FabricLoader.getInstance().configDir.resolve("mtd_offline_addon_cache")
+            )
+        )
+    }
+
     override fun onInitializeClient() {
         TagsSkinProviders.registerProvider("Offline", OfflineModeSkinProvider)
     }
