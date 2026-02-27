@@ -1,6 +1,6 @@
 package com.hiword9.mtd_offline_addon
 
-import com.hiword9.mtd_offline_addon.MTDOfflineAddon.Companion.CACHE_MANAGER
+import com.hiword9.mtd_offline_addon.MTDOfflineAddon.CACHE_MANAGER
 import net.lopymine.mtd.MyTotemDoll
 import net.lopymine.mtd.api.Response
 import net.lopymine.mtd.doll.data.TotemDollData

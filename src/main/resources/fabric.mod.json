@@ -20,7 +20,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "${mod_main_dir}.${mod_client_class}"
+      "${mod_main_dir}.${mod_client_class}::INSTANCE"
     ]
   },
   "mixins": [
