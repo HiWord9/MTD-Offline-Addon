@@ -6,10 +6,30 @@ import net.lopymine.mtd.skin.provider.extended.MojangSkinProvider
 
 object MojangSkinProviderWrapper {
     fun getDoll(nickname: String): TotemDollData {
-        var doll = OfflineModeSkinProvider.getOrLoadDoll(nickname)
-        if (doll == StandardTotemDollManager.getStandardDoll()) {
-            doll = MojangSkinProvider.getInstance().getOrLoadDoll(nickname)
-        }
+        if (isOnServer(nickname))
+            return getOfflineDoll(nickname)
+
+        if (!CacheSkinProvider.canProcess(nickname))
+            return getMojangDoll(nickname)
+
+        if (shouldPrioritizeCache())
+            return getCacheDoll(nickname)
+
+        val doll = getMojangDoll(nickname)
+        if (doll == StandardTotemDollManager.getStandardDoll())
+            return getCacheDoll(nickname)
+
         return doll
     }
 }
+
+fun getOfflineDoll(nickname: String): TotemDollData
+= OfflineModeSkinProvider.getOrLoadDoll(nickname)
+
+fun getCacheDoll(nickname: String): TotemDollData
+= CacheSkinProvider.getOrLoadDoll(nickname)
+
+fun getMojangDoll(nickname: String): TotemDollData
+= MojangSkinProvider.getInstance().getOrLoadDoll(nickname)
+
+fun shouldPrioritizeCache() = true

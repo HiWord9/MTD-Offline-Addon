@@ -14,7 +14,9 @@ object OfflineModeSkinProvider : StandardSkinProvider(false) {
         val textures = getTextures(profile.profile)
         if (textures.skin == null) return Response.empty(404)
 
-        return Response.of(200, profileTexturesToParsedSkinData(textures, profile.skin.model))
+        val data = profileTexturesToParsedSkinData(textures, profile.skin.model)
+        updateCache(nickname, data)
+        return Response.of(200, data)
     }
 
     override fun createNewDoll(nickname: String?): TotemDollData?
