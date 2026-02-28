@@ -21,6 +21,9 @@
   "entrypoints": {
     "client": [
       "${mod_main_dir}.${mod_client_class}::INSTANCE"
+    ],
+    "modmenu": [
+      "${mod_main_dir}.config.ModMenuIntegration::INSTANCE"
     ]
   },
   "mixins": [
