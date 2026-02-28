@@ -1,6 +1,6 @@
 package com.hiword9.mtd_offline_addon.mixin;
 
-import com.hiword9.mtd_offline_addon.MojangSkinProviderWrapper;
+import com.hiword9.mtd_offline_addon.MixinExecutionKt;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.lopymine.mtd.doll.data.TotemDollData;
@@ -23,6 +23,10 @@ public class TotemDollManagerMixin {
             String nickname,
             Operation<TotemDollData> original
     ) {
-        return MojangSkinProviderWrapper.INSTANCE.getDoll(nickname);
+        return MixinExecutionKt.onGetOrLoadDoll(
+                mojangSkinProvider,
+                nickname,
+                original
+        );
     }
 }
