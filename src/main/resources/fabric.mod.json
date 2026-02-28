@@ -30,6 +30,10 @@
     "${mod_id}.mixins.json"
   ],
 
+  "recommends": {
+    "yet_another_config_lib_v3": "*"
+  },
+
   "depends": {
     "my-totem-doll": "*",
     "fabricloader": "${loader_version_range}",
