@@ -1,5 +1,6 @@
 package com.hiword9.mtd_offline_addon
 
+import com.hiword9.mtd_offline_addon.config.Config
 import net.lopymine.mtd.doll.data.TotemDollData
 import net.lopymine.mtd.doll.data.LoadingState
 import net.lopymine.mtd.doll.manager.StandardTotemDollManager
@@ -35,4 +36,4 @@ fun getCacheDoll(nickname: String): TotemDollData
 fun getMojangDoll(nickname: String): TotemDollData
 = MojangSkinProvider.getInstance().getOrLoadDoll(nickname)
 
-fun shouldPrioritizeCache() = true
+fun shouldPrioritizeCache() = Config.INSTANCE.shouldPrioritizeCache

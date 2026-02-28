@@ -21,6 +21,8 @@ class Config {
         private fun initConfigFile() = DEFAULT.save()
     }
 
+    var shouldPrioritizeCache: Boolean = true
+
     fun save() {
         FileWriter(file).use { gson.toJson(this, it) }
     }
