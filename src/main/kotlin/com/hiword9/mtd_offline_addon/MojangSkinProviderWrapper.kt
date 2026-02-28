@@ -1,6 +1,7 @@
 package com.hiword9.mtd_offline_addon
 
 import net.lopymine.mtd.doll.data.TotemDollData
+import net.lopymine.mtd.doll.data.LoadingState
 import net.lopymine.mtd.doll.manager.StandardTotemDollManager
 import net.lopymine.mtd.skin.provider.extended.MojangSkinProvider
 
@@ -16,8 +17,10 @@ object MojangSkinProviderWrapper {
             return getCacheDoll(nickname)
 
         val doll = getMojangDoll(nickname)
-        if (doll == StandardTotemDollManager.getStandardDoll())
-            return getCacheDoll(nickname)
+        if (
+            doll == StandardTotemDollManager.getStandardDoll()
+            || doll.standardSprites.state == LoadingState.NOT_FOUND
+        ) return getCacheDoll(nickname)
 
         return doll
     }
