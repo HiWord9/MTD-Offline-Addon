@@ -9,7 +9,7 @@ import dev.isxander.yacl3.gui.controllers.TickBoxController
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.network.chat.Component
 
-class ScreenFactory : ConfigScreenFactory<Screen> {
+object ScreenFactory : ConfigScreenFactory<Screen> {
     override fun create(parentScreen: Screen?): Screen {
         return YetAnotherConfigLib.createBuilder()
             .title(Component.translatable("mtd-offline-addon.config.title"))

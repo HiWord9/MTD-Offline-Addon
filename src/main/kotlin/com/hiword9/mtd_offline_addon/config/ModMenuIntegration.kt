@@ -11,6 +11,6 @@ object ModMenuIntegration : ModMenuApi {
     override fun getModConfigScreenFactory(): ConfigScreenFactory<Screen> {
         if (!FabricLoader.getInstance().isModLoaded("yet_another_config_lib_v3"))
             return NullScreenFactory()
-        return ScreenFactory()
+        return ScreenFactory
     }
 }
