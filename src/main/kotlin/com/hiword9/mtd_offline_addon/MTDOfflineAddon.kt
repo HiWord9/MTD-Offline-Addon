@@ -1,5 +1,6 @@
 package com.hiword9.mtd_offline_addon
 
+import com.hiword9.mtd_offline_addon.skin_provider.*
 import com.hiword9.mtd_offline_addon.util.cache.*
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.loader.api.FabricLoader

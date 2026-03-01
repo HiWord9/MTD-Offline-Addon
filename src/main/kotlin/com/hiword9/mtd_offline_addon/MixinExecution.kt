@@ -1,6 +1,7 @@
 package com.hiword9.mtd_offline_addon
 
 import com.hiword9.mtd_offline_addon.config.Config
+import com.hiword9.mtd_offline_addon.skin_provider.OfflineModeSkinProvider
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation
 import net.lopymine.mtd.doll.data.TotemDollData
 import net.lopymine.mtd.skin.provider.extended.MojangSkinProvider

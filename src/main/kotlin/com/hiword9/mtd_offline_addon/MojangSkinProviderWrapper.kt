@@ -1,6 +1,7 @@
 package com.hiword9.mtd_offline_addon
 
 import com.hiword9.mtd_offline_addon.config.Config
+import com.hiword9.mtd_offline_addon.skin_provider.*
 import com.hiword9.mtd_offline_addon.util.*
 import net.lopymine.mtd.doll.data.TotemDollData
 import net.lopymine.mtd.doll.data.LoadingState

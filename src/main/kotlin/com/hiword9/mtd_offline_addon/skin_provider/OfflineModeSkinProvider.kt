@@ -1,4 +1,4 @@
-package com.hiword9.mtd_offline_addon
+package com.hiword9.mtd_offline_addon.skin_provider
 
 import com.hiword9.mtd_offline_addon.util.*
 import net.lopymine.mtd.MyTotemDoll
