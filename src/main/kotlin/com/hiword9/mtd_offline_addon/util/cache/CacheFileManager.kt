@@ -1,4 +1,4 @@
-package com.hiword9.mtd_offline_addon
+package com.hiword9.mtd_offline_addon.util.cache
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

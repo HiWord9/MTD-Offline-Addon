@@ -1,4 +1,4 @@
-package com.hiword9.mtd_offline_addon
+package com.hiword9.mtd_offline_addon.util.cache
 
 open class CacheManager<T>(val fileManager: CacheFileManager<T>) {
     protected val data = fileManager.load().toMutableMap()

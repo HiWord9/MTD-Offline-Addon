@@ -1,4 +1,4 @@
-package com.hiword9.mtd_offline_addon
+package com.hiword9.mtd_offline_addon.util
 
 import com.mojang.authlib.GameProfile
 import com.mojang.authlib.minecraft.MinecraftProfileTextures

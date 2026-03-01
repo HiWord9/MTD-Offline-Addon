@@ -1,5 +1,6 @@
 package com.hiword9.mtd_offline_addon
 
+import com.hiword9.mtd_offline_addon.util.*
 import net.lopymine.mtd.MyTotemDoll
 import net.lopymine.mtd.api.Response
 import net.lopymine.mtd.doll.data.TotemDollData
