@@ -1,0 +1,5 @@
+{
+  "mtd-offline-addon.config.category.main": "Главное",
+  "mtd-offline-addon.config.main.modEnabled": "Включить мод",
+  "mtd-offline-addon.config.main.shouldPrioritizeCache": "Приоритизировать кэш для лицензионных аккаунтов"
+}
