@@ -77,6 +77,10 @@ processResources {
     inputs.properties(expandProps)
 }
 
+java {
+    withSourcesJar()
+}
+
 kotlin {
     jvmToolchain(java_version.toInteger())
 }
