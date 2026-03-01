@@ -21,6 +21,7 @@ class Config {
         private fun initConfigFile() = DEFAULT.save()
     }
 
+    var modEnabled: Boolean = true
     var shouldPrioritizeCache: Boolean = true
 
     fun save() {

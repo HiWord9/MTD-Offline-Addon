@@ -16,6 +16,16 @@ class ScreenFactory : ConfigScreenFactory<Screen> {
             .category { ConfigCategory.createBuilder()
                 .name(Component.translatable("mtd-offline-addon.config.category.main"))
                 .option { Option.createBuilder<Boolean>()
+                    .name(Component.translatable("mtd-offline-addon.config.main.modEnabled"))
+                    .binding(
+                        Config.DEFAULT.modEnabled,
+                        { Config.INSTANCE.modEnabled },
+                        { Config.INSTANCE.modEnabled = it }
+                    )
+                    .controller { ControllerBuilder { TickBoxController(it) } }
+                    .build()
+                }
+                .option { Option.createBuilder<Boolean>()
                     .name(Component.translatable("mtd-offline-addon.config.main.shouldPrioritizeCache"))
                     .binding(
                         Config.DEFAULT.shouldPrioritizeCache,

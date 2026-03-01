@@ -1,5 +1,6 @@
 package com.hiword9.mtd_offline_addon
 
+import com.hiword9.mtd_offline_addon.config.Config
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation
 import net.lopymine.mtd.doll.data.TotemDollData
 import net.lopymine.mtd.skin.provider.extended.MojangSkinProvider
@@ -15,6 +16,8 @@ fun onApplyPlayerInfoUpdate(
     playerInfo: PlayerInfo,
     ci: CallbackInfo?
 ) {
+    if (!shouldMixin()) return
+
     when (action) {
         Action.ADD_PLAYER,
         Action.UPDATE_LISTED,
@@ -28,7 +31,14 @@ fun onGetOrLoadDoll(
     mojangSkinProvider: MojangSkinProvider?,
     nickname: String,
     original: Operation<TotemDollData>
-): TotemDollData = MojangSkinProviderWrapper.getDoll(nickname)
+): TotemDollData {
+    if (!shouldMixin())
+        return original.call(mojangSkinProvider, nickname)
+
+    return MojangSkinProviderWrapper.getDoll(nickname)
+}
 
 private fun reload(playerInfo: PlayerInfo): CompletableFuture<Void?>?
 = OfflineModeSkinProvider.reloadOne(playerInfo.profile.name())
+
+private fun shouldMixin() = Config.INSTANCE.modEnabled

@@ -1,5 +1,6 @@
 {
   "mtd-offline-addon.config.title": "MTD Offline Addon",
   "mtd-offline-addon.config.category.main": "Main",
+  "mtd-offline-addon.config.main.modEnabled": "Enable mod",
   "mtd-offline-addon.config.main.shouldPrioritizeCache": "Prioritize cache for licensed accounts"
 }
