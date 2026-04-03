@@ -1,6 +1,6 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '2.2.21'
-    id 'fabric-loom' version '1.15-SNAPSHOT'
+    id 'org.jetbrains.kotlin.jvm' version '2.3.20'
+    id 'net.fabricmc.fabric-loom' version '1.15-SNAPSHOT'
 }
 
 base {
@@ -28,22 +28,21 @@ repositories {
 dependencies {
     // Basic settings
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "io.github.llamalad7:mixinextras-fabric:0.2.2"
+    implementation "io.github.llamalad7:mixinextras-fabric:0.2.2"
 
     // ModMenu
-    modImplementation "com.terraformersmc:modmenu:17.0.0-beta.2"
+    implementation "com.terraformersmc:modmenu:18.0.0-alpha.6"
 
     // YACL
-    modImplementation "dev.isxander:yet-another-config-lib:3.8.2+1.21.11-fabric"
+    implementation "dev.isxander:yet-another-config-lib:3.9.2+26.1-fabric"
 
     // Fabric API
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // MyTotemDoll
-    modImplementation "maven.modrinth:ygYU16dG:VX3p0HFg"
+    implementation "maven.modrinth:ygYU16dG:SkqKD3QB"
 }
 
 processResources {
