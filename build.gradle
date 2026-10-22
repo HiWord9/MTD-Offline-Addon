@@ -33,16 +33,16 @@ dependencies {
     implementation "io.github.llamalad7:mixinextras-fabric:0.2.2"
 
     // ModMenu
-    implementation "com.terraformersmc:modmenu:18.0.0-alpha.6"
+    implementation "com.terraformersmc:modmenu:21.0.0"
 
     // YACL
-    implementation "dev.isxander:yet-another-config-lib:3.9.2+26.1-fabric"
+    implementation "dev.isxander:yet-another-config-lib:3.9.7+26.3-fabric"
 
     // Fabric API
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // MyTotemDoll
-    implementation "maven.modrinth:ygYU16dG:SkqKD3QB"
+    implementation "maven.modrinth:ygYU16dG:aMCe9nes"
 }
 
 processResources {

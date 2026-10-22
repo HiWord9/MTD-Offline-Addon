@@ -35,7 +35,7 @@
   },
 
   "depends": {
-    "my-totem-doll": "*",
+    "my_totem_doll": "*",
     "fabricloader": "${loader_version_range}",
     "minecraft": "${minecraft_version_range}",
     "java": ">=${java_version}"
